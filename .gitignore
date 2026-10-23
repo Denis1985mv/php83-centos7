@@ -1,0 +1,10 @@
+/reference/
+/tests/*.log
+*.tar
+*.tar.gz
+*.tar.xz
+*.zip
+.env
+.env.*
+*.key
+*.pem

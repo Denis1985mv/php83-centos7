@@ -1,0 +1,16 @@
+--- a/ext/openssl/xp_ssl.c
++++ b/ext/openssl/xp_ssl.c
+@@ -129,6 +129,13 @@
+ /* Used for peer verification in windows */
+ #define PHP_X509_NAME_ENTRY_TO_UTF8(ne, i, out) \
+ 	ASN1_STRING_to_UTF8(&out, X509_NAME_ENTRY_get_data(X509_NAME_get_entry(ne, i)))
++
++/* Compatibility with OpenSSL 1.0.2; callers only read the data. */
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#ifndef ASN1_STRING_get0_data
++#define ASN1_STRING_get0_data(x) ((const unsigned char *) ASN1_STRING_data(x))
++#endif
++#endif
+ 
+ #if defined(HAVE_IPV6) && defined(HAVE_INET_PTON)
+ /* Used for IPv6 Address peer verification */

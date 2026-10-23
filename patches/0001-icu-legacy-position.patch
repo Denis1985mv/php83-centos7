@@ -1,0 +1,12 @@
+--- a/ext/intl/spoofchecker/spoofchecker_main.c
++++ b/ext/intl/spoofchecker/spoofchecker_main.c
+@@ -37,7 +37,8 @@
+ #if U_ICU_VERSION_MAJOR_NUM >= 58
+ 	ret = uspoof_check2UTF8(co->uspoof, text, text_len, co->uspoofres, SPOOFCHECKER_ERROR_CODE_P(co));
+ #else
+-	ret = uspoof_checkUTF8(co->uspoof, text, text_len, NULL, SPOOFCHECKER_ERROR_CODE_P(co));
++        int32_t position = 0;
++        ret = uspoof_checkUTF8(co->uspoof, text, text_len, &position, SPOOFCHECKER_ERROR_CODE_P(co));
+ #endif
+ 
+ 	if (U_FAILURE(SPOOFCHECKER_ERROR_CODE(co))) {
