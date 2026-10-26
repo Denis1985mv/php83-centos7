@@ -1,5 +1,36 @@
 # php83-centos7
 
+> **ВНИМАНИЕ! / WARNING!**
+>
+> Неофициальная экспериментальная сборка PHP 8.3.36 для
+> CentOS 7.9.2009 x86_64 с CLI/CGI.
+>
+> Не является официальной сборкой проекта PHP, Remi,
+> CentOS или 1С-Битрикс.
+>
+> В сохранённом запуске тестов зафиксированы 16 неразобранных
+> ошибок и 4003 пропущенных теста. Не считайте сборку
+> полностью прошедшей тестирование.
+>
+> Полная пересборка с нуля в чистом окружении по материалам
+> этого репозитория пока не подтверждена.
+>
+> Сохранённая конфигурация не включает PHP-FPM или Apache
+> mod_php. Это не готовая замена системного PHP и не
+> универсальный установочный пакет.
+>
+> Не устанавливайте сборку на рабочий сервер без проверки
+> совместимости, тестирования на изолированном стенде,
+> актуальной резервной копии и проверенного способа отката.
+>
+> Подробности: [WARNING.md](WARNING.md) и
+> [результаты тестов](tests/SUMMARY.md).
+>
+> Unofficial experimental build. There are 16 unresolved
+> test failures. A clean-environment rebuild has not been
+> verified. Do not deploy without independent validation,
+> backups and a tested rollback procedure.
+
 Unofficial PHP 8.3.36 compatibility build for CentOS 7.9.2009 x86_64.
 
 ## Status
